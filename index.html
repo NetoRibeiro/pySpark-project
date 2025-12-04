@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metadata-Driven ETL Dashboard</title>
+  <script>
+    async function runAnalysis() {
+      const platform = document.getElementById('platform').value;
+      const date = document.getElementById('date').value;
+      const historicalWeeks = document.getElementById('weeks').value;
+      const resp = await fetch('/api/run-analysis', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ platform, date, historical_weeks: Number(historicalWeeks) })
+      });
+      const data = await resp.json();
+      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Metadata-Driven ETL Dashboard</h1>
+  <label>Platform: <input id="platform" value="netflix"></label>
+  <label>Date: <input id="date" value="2024-01-07"></label>
+  <label>History Weeks: <input id="weeks" type="number" value="4"></label>
+  <button onclick="runAnalysis()">Run Analysis</button>
+  <pre id="output"></pre>
+</body>
+</html>

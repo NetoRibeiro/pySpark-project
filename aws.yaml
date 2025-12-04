@@ -1,0 +1,6 @@
+bucket: vearsa-ftp-prod
+base_path: raw/ingest
+patterns:
+  netflix: "netflix-viewing_{date}.txt"
+  prime: "prime-viewing_{date}.txt"
+  disney: "disney-viewing_{date}.txt"
