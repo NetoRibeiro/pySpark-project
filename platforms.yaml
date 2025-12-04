@@ -1,0 +1,40 @@
+netflix:
+  columns:
+    im_user_id:
+      name: user_id
+      type: string
+    profile_id:
+      name: profile_id
+      type: string
+    series_id:
+      name: series_id
+      type: string
+    series_title:
+      name: series_title
+      type: string
+    event_date:
+      name: event_date
+      type: date
+    minutes_viewed:
+      name: minutes_viewed
+      type: integer
+prime:
+  columns:
+    user_identifier:
+      name: user_id
+      type: string
+    session_id:
+      name: profile_id
+      type: string
+    content_id:
+      name: series_id
+      type: string
+    content_title:
+      name: series_title
+      type: string
+    watch_date:
+      name: event_date
+      type: date
+    duration_minutes:
+      name: minutes_viewed
+      type: integer
